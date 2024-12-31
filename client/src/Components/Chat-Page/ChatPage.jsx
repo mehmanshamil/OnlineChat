@@ -12,7 +12,8 @@ const ChatPage = ({ socket, room, userName }) => {
     });
   }, [socket]);
 
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
+    e.preventDefault();
     const messageContent = {
       userName: userName,
       message: message,
@@ -43,19 +44,16 @@ const ChatPage = ({ socket, room, userName }) => {
         <div className="chatting">
           {messageList &&
             messageList.map((user, i) => (
-              <div key={i} className={` ${userName === user.userName? " me " : " other "} message `}>
+              <div
+                key={i}
+                className={` ${
+                  userName === user.userName ? " me " : " other "
+                } message `}
+              >
                 {user.message}
-                <div>{user.userName} - 12.21.2023</div>
+                <div>{user.userName} : {user.date}</div>
               </div>
             ))}
-          {/* <div className="message other">
-            Numune mesaji !!!
-            <div>Mexman - 12.21.2023</div>
-          </div>
-          <div className="message me">
-            Numune mesaji !!!
-            <div>Mexman - 12.21.2023</div>
-          </div> */}
         </div>
         <form className="formSend">
           <input
