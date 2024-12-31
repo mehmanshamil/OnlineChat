@@ -1,0 +1,50 @@
+.roomWelcome {
+    background-color: black;
+    height: 100vh;
+
+    h1 {
+        color: #fff;
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem;
+        text-transform: uppercase;
+    }
+    form{
+        background-color: orange;
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        height: 30rem;
+        justify-content: center;
+        gap: 1rem;
+        input,button{
+            width: 60%;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        button{
+            width: 40%;
+            cursor: pointer;
+            letter-spacing: 2px;
+            font-weight: bold;
+            background-color: black;
+            color: #fff;
+            border: 1px solid black;
+            transition: .5s;
+            &:hover{
+                background-color: #fff;
+                color: #000;
+            }
+        }
+        h2{
+            color: #000;
+            text-transform: uppercase;
+        }
+
+    }
+}
